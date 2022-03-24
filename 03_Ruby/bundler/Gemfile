@@ -1,0 +1,11 @@
+# Arquivo responsável por configurar as "gems" a serem baixadas.
+# Gems são "programas" prontos disponiveis em uma fonte, que podem ser reutilizados por outros projetos.
+# Usamos o "bundler" (no terminal comando "bundle install") para gerenciar o download assim como o controle de versão entre as dependencias.
+# Caso seja necessario uma gem em versão diferente da última basta coloca-la a frente, ex: "gem 'rails', '4.2.0' ".
+
+source 'https://rubygems.org'
+
+ruby '3.1.1'
+gem 'enumerate_it'
+gem 'rails'
+gem 'rspec'
