@@ -14,7 +14,7 @@ teste/
 /db/*.sqlite3-*
 
 # Ignore all logfiles and tempfiles.
-/log/*
+08_Rails/tickets/log/*
 08_Rails/tickets/tmp/*
 !/log/.keep
 !/tmp/.keep
