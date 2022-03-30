@@ -1,0 +1,212 @@
+Started GET "/" for 127.0.0.1 at 2022-03-30 16:06:31 -0300
+  [1m[35m (3.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/eduardo/.asdf/installs/ruby/3.1.1/lib/ruby/gems/3.1.0/gems/railties-7.0.2.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/eduardo/.asdf/installs/ruby/3.1.1/lib/ruby/gems/3.1.0/gems/railties-7.0.2.3/lib/rails/templates/rails/welcome/index.html.erb (Duration: 3.1ms | Allocations: 634)
+Completed 200 OK in 28ms (Views: 10.8ms | ActiveRecord: 0.0ms | Allocations: 4916)
+
+
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (8.3ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (6.0ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateTickets (20220330191019)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "tickets" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "price" float, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20220330191019"]]
+  [1m[36mTRANSACTION (5.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2022-03-30 19:11:56.354153"], ["updated_at", "2022-03-30 19:11:56.354153"]]
+  [1m[36mTRANSACTION (4.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2022-03-30 16:15:34 -0300
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by TicketsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tickets/index.html.erb within layouts/application
+  [1m[36mTicket Load (0.3ms)[0m  [1m[34mSELECT "tickets".* FROM "tickets"[0m
+  ↳ app/views/tickets/index.html.erb:6
+  Rendered tickets/index.html.erb within layouts/application (Duration: 6.6ms | Allocations: 1562)
+  Rendered layout layouts/application.html.erb (Duration: 494.3ms | Allocations: 91945)
+Completed 200 OK in 509ms (Views: 498.0ms | ActiveRecord: 0.3ms | Allocations: 95970)
+
+
+Started GET "/tickets/new" for 127.0.0.1 at 2022-03-30 16:20:24 -0300
+Processing by TicketsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tickets/new.html.erb within layouts/application
+  Rendered tickets/_form.html.erb (Duration: 16.8ms | Allocations: 4517)
+  Rendered tickets/new.html.erb within layouts/application (Duration: 18.1ms | Allocations: 4888)
+  Rendered layout layouts/application.html.erb (Duration: 22.4ms | Allocations: 7045)
+Completed 200 OK in 41ms (Views: 23.3ms | ActiveRecord: 0.7ms | Allocations: 21203)
+
+
+Started POST "/tickets" for 127.0.0.1 at 2022-03-30 16:20:33 -0300
+Processing by TicketsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "ticket"=>{"title"=>"Teste 01", "price"=>"123"}, "commit"=>"Create Ticket"}
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/tickets_controller.rb:27:in `block in create'
+  [1m[36mTicket Create (0.4ms)[0m  [1m[32mINSERT INTO "tickets" ("title", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Teste 01"], ["price", 123.0], ["created_at", "2022-03-30 19:20:33.086175"], ["updated_at", "2022-03-30 19:20:33.086175"]]
+  ↳ app/controllers/tickets_controller.rb:27:in `block in create'
+  [1m[36mTRANSACTION (6.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/tickets_controller.rb:27:in `block in create'
+Redirected to http://127.0.0.1:3000/tickets/1
+Completed 302 Found in 47ms (ActiveRecord: 7.4ms | Allocations: 3828)
+
+
+Started GET "/tickets/1" for 127.0.0.1 at 2022-03-30 16:20:33 -0300
+Processing by TicketsController#show as TURBO_STREAM
+  Parameters: {"id"=>"1"}
+  [1m[36mTicket Load (0.3ms)[0m  [1m[34mSELECT "tickets".* FROM "tickets" WHERE "tickets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/tickets_controller.rb:63:in `set_ticket'
+  Rendering layout layouts/application.html.erb
+  Rendering tickets/show.html.erb within layouts/application
+  Rendered tickets/_ticket.html.erb (Duration: 3.9ms | Allocations: 239)
+  Rendered tickets/show.html.erb within layouts/application (Duration: 23.9ms | Allocations: 1474)
+  Rendered layout layouts/application.html.erb (Duration: 42.2ms | Allocations: 3613)
+Completed 200 OK in 67ms (Views: 43.4ms | ActiveRecord: 0.3ms | Allocations: 6392)
+
+
+Started GET "/tickets" for 127.0.0.1 at 2022-03-30 16:20:36 -0300
+Processing by TicketsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tickets/index.html.erb within layouts/application
+  [1m[36mTicket Load (0.2ms)[0m  [1m[34mSELECT "tickets".* FROM "tickets"[0m
+  ↳ app/views/tickets/index.html.erb:6
+  Rendered tickets/_ticket.html.erb (Duration: 0.3ms | Allocations: 26)
+  Rendered tickets/index.html.erb within layouts/application (Duration: 5.1ms | Allocations: 1014)
+  Rendered layout layouts/application.html.erb (Duration: 15.4ms | Allocations: 3056)
+Completed 200 OK in 19ms (Views: 16.9ms | ActiveRecord: 0.2ms | Allocations: 3383)
+
+
+Started GET "/tickets/1" for 127.0.0.1 at 2022-03-30 16:20:38 -0300
+Processing by TicketsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTicket Load (0.1ms)[0m  [1m[34mSELECT "tickets".* FROM "tickets" WHERE "tickets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/tickets_controller.rb:63:in `set_ticket'
+  Rendering layout layouts/application.html.erb
+  Rendering tickets/show.html.erb within layouts/application
+  Rendered tickets/_ticket.html.erb (Duration: 0.3ms | Allocations: 26)
+  Rendered tickets/show.html.erb within layouts/application (Duration: 3.0ms | Allocations: 459)
+  Rendered layout layouts/application.html.erb (Duration: 12.1ms | Allocations: 2491)
+Completed 200 OK in 20ms (Views: 17.3ms | ActiveRecord: 0.1ms | Allocations: 3276)
+
+
+Started GET "/tickets/1/edit" for 127.0.0.1 at 2022-03-30 16:20:40 -0300
+Processing by TicketsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTicket Load (0.8ms)[0m  [1m[34mSELECT "tickets".* FROM "tickets" WHERE "tickets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/tickets_controller.rb:63:in `set_ticket'
+  Rendering layout layouts/application.html.erb
+  Rendering tickets/edit.html.erb within layouts/application
+  Rendered tickets/_form.html.erb (Duration: 5.2ms | Allocations: 928)
+  Rendered tickets/edit.html.erb within layouts/application (Duration: 9.2ms | Allocations: 1223)
+  Rendered layout layouts/application.html.erb (Duration: 17.8ms | Allocations: 3255)
+Completed 200 OK in 27ms (Views: 19.3ms | ActiveRecord: 0.8ms | Allocations: 4084)
+
+
+Started PATCH "/tickets/1" for 127.0.0.1 at 2022-03-30 16:20:46 -0300
+Processing by TicketsController#update as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "ticket"=>{"title"=>"Teste 01", "price"=>"12.3"}, "commit"=>"Update Ticket", "id"=>"1"}
+  [1m[36mTicket Load (0.1ms)[0m  [1m[34mSELECT "tickets".* FROM "tickets" WHERE "tickets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/tickets_controller.rb:63:in `set_ticket'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/tickets_controller.rb:40:in `block in update'
+  [1m[36mTicket Update (0.2ms)[0m  [1m[33mUPDATE "tickets" SET "price" = ?, "updated_at" = ? WHERE "tickets"."id" = ?[0m  [["price", 12.3], ["updated_at", "2022-03-30 19:20:46.372660"], ["id", 1]]
+  ↳ app/controllers/tickets_controller.rb:40:in `block in update'
+  [1m[36mTRANSACTION (4.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/tickets_controller.rb:40:in `block in update'
+Redirected to http://127.0.0.1:3000/tickets/1
+Completed 302 Found in 13ms (ActiveRecord: 4.7ms | Allocations: 3101)
+
+
+Started GET "/tickets/1" for 127.0.0.1 at 2022-03-30 16:20:46 -0300
+Processing by TicketsController#show as TURBO_STREAM
+  Parameters: {"id"=>"1"}
+  [1m[36mTicket Load (0.1ms)[0m  [1m[34mSELECT "tickets".* FROM "tickets" WHERE "tickets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/tickets_controller.rb:63:in `set_ticket'
+  Rendering layout layouts/application.html.erb
+  Rendering tickets/show.html.erb within layouts/application
+  Rendered tickets/_ticket.html.erb (Duration: 0.1ms | Allocations: 26)
+  Rendered tickets/show.html.erb within layouts/application (Duration: 1.2ms | Allocations: 475)
+  Rendered layout layouts/application.html.erb (Duration: 5.7ms | Allocations: 2506)
+Completed 200 OK in 9ms (Views: 6.4ms | ActiveRecord: 0.1ms | Allocations: 3267)
+
+
+Started GET "/tickets" for 127.0.0.1 at 2022-03-30 16:20:48 -0300
+Processing by TicketsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tickets/index.html.erb within layouts/application
+  [1m[36mTicket Load (0.2ms)[0m  [1m[34mSELECT "tickets".* FROM "tickets"[0m
+  ↳ app/views/tickets/index.html.erb:6
+  Rendered tickets/_ticket.html.erb (Duration: 0.1ms | Allocations: 26)
+  Rendered tickets/index.html.erb within layouts/application (Duration: 4.0ms | Allocations: 904)
+  Rendered layout layouts/application.html.erb (Duration: 10.1ms | Allocations: 2944)
+Completed 200 OK in 12ms (Views: 11.4ms | ActiveRecord: 0.2ms | Allocations: 3234)
+
+
+Started GET "/tickets/new" for 127.0.0.1 at 2022-03-30 16:20:58 -0300
+Processing by TicketsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tickets/new.html.erb within layouts/application
+  Rendered tickets/_form.html.erb (Duration: 1.9ms | Allocations: 814)
+  Rendered tickets/new.html.erb within layouts/application (Duration: 2.3ms | Allocations: 913)
+  Rendered layout layouts/application.html.erb (Duration: 6.7ms | Allocations: 2954)
+Completed 200 OK in 8ms (Views: 7.7ms | ActiveRecord: 0.0ms | Allocations: 3242)
+
+
+Started POST "/tickets" for 127.0.0.1 at 2022-03-30 16:21:09 -0300
+Processing by TicketsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "ticket"=>{"title"=>"Xablau", "price"=>"5.99"}, "commit"=>"Create Ticket"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/tickets_controller.rb:27:in `block in create'
+  [1m[36mTicket Create (0.3ms)[0m  [1m[32mINSERT INTO "tickets" ("title", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Xablau"], ["price", 5.99], ["created_at", "2022-03-30 19:21:09.852641"], ["updated_at", "2022-03-30 19:21:09.852641"]]
+  ↳ app/controllers/tickets_controller.rb:27:in `block in create'
+  [1m[36mTRANSACTION (7.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/tickets_controller.rb:27:in `block in create'
+Redirected to http://127.0.0.1:3000/tickets/2
+Completed 302 Found in 16ms (ActiveRecord: 8.1ms | Allocations: 2265)
+
+
+Started GET "/tickets/2" for 127.0.0.1 at 2022-03-30 16:21:09 -0300
+Processing by TicketsController#show as TURBO_STREAM
+  Parameters: {"id"=>"2"}
+  [1m[36mTicket Load (0.1ms)[0m  [1m[34mSELECT "tickets".* FROM "tickets" WHERE "tickets"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/tickets_controller.rb:63:in `set_ticket'
+  Rendering layout layouts/application.html.erb
+  Rendering tickets/show.html.erb within layouts/application
+  Rendered tickets/_ticket.html.erb (Duration: 0.1ms | Allocations: 26)
+  Rendered tickets/show.html.erb within layouts/application (Duration: 1.1ms | Allocations: 477)
+  Rendered layout layouts/application.html.erb (Duration: 5.3ms | Allocations: 2510)
+Completed 200 OK in 7ms (Views: 5.9ms | ActiveRecord: 0.1ms | Allocations: 3271)
+
+
+Started GET "/tickets" for 127.0.0.1 at 2022-03-30 16:21:11 -0300
+Processing by TicketsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tickets/index.html.erb within layouts/application
+  [1m[36mTicket Load (0.2ms)[0m  [1m[34mSELECT "tickets".* FROM "tickets"[0m
+  ↳ app/views/tickets/index.html.erb:6
+  Rendered tickets/_ticket.html.erb (Duration: 0.2ms | Allocations: 26)
+  Rendered tickets/_ticket.html.erb (Duration: 0.1ms | Allocations: 25)
+  Rendered tickets/index.html.erb within layouts/application (Duration: 4.1ms | Allocations: 1051)
+  Rendered layout layouts/application.html.erb (Duration: 9.2ms | Allocations: 3090)
+Completed 200 OK in 11ms (Views: 9.8ms | ActiveRecord: 0.2ms | Allocations: 3372)
+
+
+Started GET "/tickets" for 127.0.0.1 at 2022-03-30 16:21:20 -0300
+Processing by TicketsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tickets/index.html.erb within layouts/application
+  [1m[36mTicket Load (0.1ms)[0m  [1m[34mSELECT "tickets".* FROM "tickets"[0m
+  ↳ app/views/tickets/index.html.erb:6
+  Rendered tickets/_ticket.html.erb (Duration: 0.1ms | Allocations: 26)
+  Rendered tickets/_ticket.html.erb (Duration: 0.1ms | Allocations: 25)
+  Rendered tickets/index.html.erb within layouts/application (Duration: 3.9ms | Allocations: 1027)
+  Rendered layout layouts/application.html.erb (Duration: 9.1ms | Allocations: 3066)
+Completed 200 OK in 11ms (Views: 10.1ms | ActiveRecord: 0.1ms | Allocations: 3345)
+
+
