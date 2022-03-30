@@ -1,0 +1,38 @@
+# Link para download: https://www.postgresql.org/download/
+
+# Navegando pelo site acima chegamos as instruções/comandos para instalação abaixo:
+
+# #########################################
+# Create the file repository configuration:
+sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main" > /etc/apt/sources.list.d/pgdg.list'
+
+# Import the repository signing key:
+wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
+
+# Update the package lists:
+sudo apt-get update
+
+# Install the latest version of PostgreSQL.
+# If you want a specific version, use 'postgresql-12' or similar instead of 'postgresql':
+sudo apt-get -y install postgresql
+# #########################################
+
+
+
+# Uma vez instalado rodar o comando para inicializar:
+sudo service postgresql start
+
+
+# Para usar o postgresql com um usuário sem senha editar o arquivo 'pg_hba.conf':
+sudo nano /etc/postgresql/13/main/pg_hba.conf
+
+# Alterar a linha logo abaixo de "# Database administrative login by Unix domain socket", na última coluna de 'peer' para 'trust';
+# A linha completa ficará assim: 'local   all             postgres                                trust'
+
+# Depois de editar/salvar o arquivo reiniciar o postgresql:
+sudo service postgresql restart
+
+# Para ver as bases disponiveis no postgresql:
+psql -U postgres -l
+
+

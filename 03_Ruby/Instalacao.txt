@@ -1,0 +1,66 @@
+###### Comandos executados no Ubuntu ######
+
+
+###
+### Dependências ###
+
+# Atualizar o Linux:
+sudo apt update && sudo apt upgrade
+
+# Instalar as dependências necessárias:
+sudo apt install build-essential git automake autoconf libreadline-dev libncurses-dev libssl-dev libyaml-dev libxslt-dev libffi-dev libtool unixodbc-dev unzip curl zlib1g-dev sqlite3 libsqlite3-dev
+
+
+###
+### ASDF ###
+
+# Site: https://asdf-vm.com/
+
+# Instalar o ASDF:
+git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch vX.X.X
+echo -e '\n. $HOME/.asdf/asdf.sh' >> ~/.bashrc
+echo -e '\n. $HOME/.asdf/completions/asdf.bash' >> ~/.bashrc
+​
+asdf --version
+
+
+###
+### Ruby ###
+
+# Site: https://www.ruby-lang.org/
+
+# Instalar o Ruby com o ASDF:
+asdf plugin-add ruby
+asdf install ruby X.X.X
+asdf global ruby X.X.X
+​
+ruby -v
+
+
+###
+### Node ###
+
+# Site: https://nodejs.org/
+
+# Instalar o Node com o ASDF:
+asdf plugin-add nodejs
+asdf install nodejs X.X.X
+asdf global nodejs X.X.X
+​
+node -v
+
+
+###
+### Yarn ###
+
+# Instalar o Yarn:
+npm install --global yarn
+​
+yarn -v
+
+
+###
+### IRB ###
+
+# Testar código Ruby direto no terminal:
+irb
