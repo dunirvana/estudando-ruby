@@ -322,3 +322,281 @@ Processing by TicketsController#create as TURBO_STREAM
 Completed 422 Unprocessable Entity in 8ms (Views: 6.6ms | ActiveRecord: 0.0ms | Allocations: 4875)
 
 
+Started GET "/tickets" for 127.0.0.1 at 2022-03-30 17:04:20 -0300
+Processing by TicketsController#index as */*
+  Rendering layout layouts/application.html.erb
+  Rendering tickets/index.html.erb within layouts/application
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/views/tickets/index.html.erb:6
+  [1m[36mTicket Load (0.8ms)[0m  [1m[34mSELECT "tickets".* FROM "tickets"[0m
+  ↳ app/views/tickets/index.html.erb:6
+  Rendered tickets/_ticket.html.erb (Duration: 3.1ms | Allocations: 26)
+  Rendered tickets/_ticket.html.erb (Duration: 0.2ms | Allocations: 25)
+  Rendered tickets/index.html.erb within layouts/application (Duration: 91.3ms | Allocations: 1655)
+  Rendered layout layouts/application.html.erb (Duration: 149.1ms | Allocations: 3719)
+Completed 200 OK in 185ms (Views: 162.4ms | ActiveRecord: 10.7ms | Allocations: 4115)
+
+
+Started GET "/ticketsj" for 127.0.0.1 at 2022-03-30 17:10:00 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/ticketsj"):
+  
+Started GET "/tickets" for 127.0.0.1 at 2022-03-30 17:10:20 -0300
+Processing by TicketsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tickets/index.html.erb within layouts/application
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/views/tickets/index.html.erb:6
+  [1m[36mTicket Load (0.3ms)[0m  [1m[34mSELECT "tickets".* FROM "tickets"[0m
+  ↳ app/views/tickets/index.html.erb:6
+  Rendered tickets/_ticket.html.erb (Duration: 1.0ms | Allocations: 50)
+  Rendered tickets/_ticket.html.erb (Duration: 0.2ms | Allocations: 25)
+  Rendered tickets/index.html.erb within layouts/application (Duration: 28.6ms | Allocations: 3106)
+  Rendered layout layouts/application.html.erb (Duration: 93.8ms | Allocations: 16611)
+Completed 200 OK in 119ms (Views: 97.5ms | ActiveRecord: 2.6ms | Allocations: 18109)
+
+
+Started GET "/ticketsj" for 127.0.0.1 at 2022-03-30 17:10:24 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/ticketsj"):
+  
+Started GET "/ticketsj" for 127.0.0.1 at 2022-03-30 17:10:57 -0300
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/ticketsj"):
+  
+Started GET "/tickets" for 127.0.0.1 at 2022-03-30 17:11:01 -0300
+Processing by TicketsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tickets/index.html.erb within layouts/application
+  [1m[36mTicket Load (0.3ms)[0m  [1m[34mSELECT "tickets".* FROM "tickets"[0m
+  ↳ app/views/tickets/index.html.erb:6
+  Rendered tickets/_ticket.html.erb (Duration: 1.1ms | Allocations: 264)
+  Rendered tickets/_ticket.html.erb (Duration: 0.1ms | Allocations: 25)
+  Rendered tickets/index.html.erb within layouts/application (Duration: 18.3ms | Allocations: 5802)
+  Rendered layout layouts/application.html.erb (Duration: 132.5ms | Allocations: 40089)
+Completed 200 OK in 146ms (Views: 134.0ms | ActiveRecord: 0.9ms | Allocations: 43199)
+
+
+Started GET "/tickets/indexj" for 127.0.0.1 at 2022-03-30 17:12:16 -0300
+Processing by TicketsController#show as HTML
+  Parameters: {"id"=>"indexj"}
+  [1m[36mTicket Load (0.8ms)[0m  [1m[34mSELECT "tickets".* FROM "tickets" WHERE "tickets"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/tickets_controller.rb:69:in `set_ticket'
+Completed 404 Not Found in 42ms (ActiveRecord: 0.8ms | Allocations: 12302)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Ticket with 'id'=indexj):
+  
+app/controllers/tickets_controller.rb:69:in `set_ticket'
+Started GET "/ticketsj" for 127.0.0.1 at 2022-03-30 17:12:41 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/ticketsj"):
+  
+Started GET "/tickets/indexj" for 127.0.0.1 at 2022-03-30 17:13:04 -0300
+Processing by TicketsController#show as */*
+  Parameters: {"id"=>"indexj"}
+  [1m[36mTicket Load (0.2ms)[0m  [1m[34mSELECT "tickets".* FROM "tickets" WHERE "tickets"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/tickets_controller.rb:69:in `set_ticket'
+Completed 404 Not Found in 2ms (ActiveRecord: 0.2ms | Allocations: 943)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Ticket with 'id'=indexj):
+  
+app/controllers/tickets_controller.rb:69:in `set_ticket'
+Started GET "/tickets/" for 127.0.0.1 at 2022-03-30 17:19:03 -0300
+Processing by TicketsController#index as */*
+  Rendering layout layouts/application.html.erb
+  Rendering tickets/index.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/views/tickets/index.html.erb:6
+  [1m[36mTicket Load (0.3ms)[0m  [1m[34mSELECT "tickets".* FROM "tickets"[0m
+  ↳ app/views/tickets/index.html.erb:6
+  Rendered tickets/_ticket.html.erb (Duration: 0.2ms | Allocations: 50)
+  Rendered tickets/_ticket.html.erb (Duration: 0.1ms | Allocations: 25)
+  Rendered tickets/index.html.erb within layouts/application (Duration: 13.1ms | Allocations: 3138)
+  Rendered layout layouts/application.html.erb (Duration: 49.7ms | Allocations: 16651)
+Completed 200 OK in 57ms (Views: 52.2ms | ActiveRecord: 1.6ms | Allocations: 18249)
+
+
+Started GET "/tickets/" for 127.0.0.1 at 2022-03-30 17:19:26 -0300
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by TicketsController#index as */*
+  Rendering layout layouts/application.html.erb
+  Rendering tickets/index.html.erb within layouts/application
+  [1m[36mTicket Load (0.3ms)[0m  [1m[34mSELECT "tickets".* FROM "tickets"[0m
+  ↳ app/views/tickets/index.html.erb:6
+  Rendered tickets/_ticket.html.erb (Duration: 0.7ms | Allocations: 275)
+  Rendered tickets/_ticket.html.erb (Duration: 0.1ms | Allocations: 25)
+  Rendered tickets/index.html.erb within layouts/application (Duration: 17.6ms | Allocations: 6159)
+  Rendered layout layouts/application.html.erb (Duration: 104.2ms | Allocations: 40375)
+Completed 200 OK in 115ms (Views: 106.3ms | ActiveRecord: 0.9ms | Allocations: 44635)
+
+
+Started GET "/tickets/" for 127.0.0.1 at 2022-03-30 17:19:43 -0300
+Processing by TicketsController#index as */*
+  Parameters: {"ticket"=>{}}
+  Rendering layout layouts/application.html.erb
+  Rendering tickets/index.html.erb within layouts/application
+  [1m[36mTicket Load (0.1ms)[0m  [1m[34mSELECT "tickets".* FROM "tickets"[0m
+  ↳ app/views/tickets/index.html.erb:6
+  Rendered tickets/_ticket.html.erb (Duration: 0.1ms | Allocations: 33)
+  Rendered tickets/_ticket.html.erb (Duration: 0.1ms | Allocations: 25)
+  Rendered tickets/index.html.erb within layouts/application (Duration: 2.8ms | Allocations: 1213)
+  Rendered layout layouts/application.html.erb (Duration: 7.0ms | Allocations: 3365)
+Completed 200 OK in 9ms (Views: 7.7ms | ActiveRecord: 0.1ms | Allocations: 3774)
+
+
+Started GET "/tickets/" for 127.0.0.1 at 2022-03-30 17:20:30 -0300
+Processing by TicketsController#index as */*
+  Parameters: {"ticket"=>{}}
+  Rendering layout layouts/application.html.erb
+  Rendering tickets/index.html.erb within layouts/application
+  [1m[36mTicket Load (0.1ms)[0m  [1m[34mSELECT "tickets".* FROM "tickets"[0m
+  ↳ app/views/tickets/index.html.erb:6
+  Rendered tickets/_ticket.html.erb (Duration: 0.1ms | Allocations: 26)
+  Rendered tickets/_ticket.html.erb (Duration: 0.1ms | Allocations: 25)
+  Rendered tickets/index.html.erb within layouts/application (Duration: 2.9ms | Allocations: 1042)
+  Rendered layout layouts/application.html.erb (Duration: 5.8ms | Allocations: 3082)
+Completed 200 OK in 7ms (Views: 6.3ms | ActiveRecord: 0.1ms | Allocations: 3412)
+
+
+Started GET "/tickets/" for 127.0.0.1 at 2022-03-30 17:22:20 -0300
+Processing by TicketsController#index as */*
+  Parameters: {"ticket"=>{}}
+  Rendering layout layouts/application.html.erb
+  Rendering tickets/index.html.erb within layouts/application
+  [1m[36mTicket Load (0.1ms)[0m  [1m[34mSELECT "tickets".* FROM "tickets"[0m
+  ↳ app/views/tickets/index.html.erb:6
+  Rendered tickets/_ticket.html.erb (Duration: 0.1ms | Allocations: 26)
+  Rendered tickets/_ticket.html.erb (Duration: 0.1ms | Allocations: 25)
+  Rendered tickets/index.html.erb within layouts/application (Duration: 2.8ms | Allocations: 1063)
+  Rendered layout layouts/application.html.erb (Duration: 5.6ms | Allocations: 3102)
+Completed 200 OK in 7ms (Views: 6.0ms | ActiveRecord: 0.1ms | Allocations: 3422)
+
+
+Started GET "/tickets/" for 127.0.0.1 at 2022-03-30 17:22:57 -0300
+Processing by TicketsController#index as */*
+  Parameters: {"ticket"=>{}}
+  Rendering layout layouts/application.html.erb
+  Rendering tickets/index.html.erb within layouts/application
+  [1m[36mTicket Load (0.1ms)[0m  [1m[34mSELECT "tickets".* FROM "tickets"[0m
+  ↳ app/views/tickets/index.html.erb:6
+  Rendered tickets/_ticket.html.erb (Duration: 0.2ms | Allocations: 26)
+  Rendered tickets/_ticket.html.erb (Duration: 0.1ms | Allocations: 25)
+  Rendered tickets/index.html.erb within layouts/application (Duration: 3.1ms | Allocations: 1039)
+  Rendered layout layouts/application.html.erb (Duration: 7.1ms | Allocations: 3079)
+Completed 200 OK in 8ms (Views: 7.7ms | ActiveRecord: 0.1ms | Allocations: 3409)
+
+
+Started GET "/tickets/" for 127.0.0.1 at 2022-03-30 17:24:43 -0300
+Processing by TicketsController#index as */*
+  Parameters: {"ticket"=>{}}
+  Rendering layout layouts/application.html.erb
+  Rendering tickets/index.html.erb within layouts/application
+  [1m[36mTicket Load (0.2ms)[0m  [1m[34mSELECT "tickets".* FROM "tickets"[0m
+  ↳ app/views/tickets/index.html.erb:6
+  Rendered tickets/_ticket.html.erb (Duration: 0.3ms | Allocations: 26)
+  Rendered tickets/_ticket.html.erb (Duration: 0.2ms | Allocations: 25)
+  Rendered tickets/index.html.erb within layouts/application (Duration: 5.5ms | Allocations: 1054)
+  Rendered layout layouts/application.html.erb (Duration: 9.2ms | Allocations: 3094)
+Completed 200 OK in 11ms (Views: 9.7ms | ActiveRecord: 0.2ms | Allocations: 3424)
+
+
+Started GET "/tickets/" for 127.0.0.1 at 2022-03-30 17:26:42 -0300
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+NoMethodError (undefined method `respond_to' for TicketsController:Class
+
+  respond_to :html, :xml, :json
+  ^^^^^^^^^^
+Did you mean?  respond_to?):
+  
+app/controllers/tickets_controller.rb:4:in `<class:TicketsController>'
+app/controllers/tickets_controller.rb:1:in `<main>'
+Started GET "/tickets" for 127.0.0.1 at 2022-03-30 17:26:50 -0300
+  
+NoMethodError (undefined method `respond_to' for TicketsController:Class
+
+  respond_to :html, :xml, :json
+  ^^^^^^^^^^
+Did you mean?  respond_to?):
+  
+app/controllers/tickets_controller.rb:4:in `<class:TicketsController>'
+app/controllers/tickets_controller.rb:1:in `<main>'
+Started GET "/tickets" for 127.0.0.1 at 2022-03-30 17:28:02 -0300
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by TicketsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tickets/index.html.erb within layouts/application
+  [1m[36mTicket Load (0.2ms)[0m  [1m[34mSELECT "tickets".* FROM "tickets"[0m
+  ↳ app/views/tickets/index.html.erb:6
+  Rendered tickets/_ticket.html.erb (Duration: 1.0ms | Allocations: 275)
+  Rendered tickets/_ticket.html.erb (Duration: 0.1ms | Allocations: 25)
+  Rendered tickets/index.html.erb within layouts/application (Duration: 15.8ms | Allocations: 6174)
+  Rendered layout layouts/application.html.erb (Duration: 96.5ms | Allocations: 40509)
+Completed 200 OK in 109ms (Views: 98.4ms | ActiveRecord: 0.7ms | Allocations: 44765)
+
+
+Started GET "/tickets/" for 127.0.0.1 at 2022-03-30 17:28:05 -0300
+Processing by TicketsController#index as */*
+  Parameters: {"ticket"=>{}}
+  Rendering layout layouts/application.html.erb
+  Rendering tickets/index.html.erb within layouts/application
+  [1m[36mTicket Load (0.1ms)[0m  [1m[34mSELECT "tickets".* FROM "tickets"[0m
+  ↳ app/views/tickets/index.html.erb:6
+  Rendered tickets/_ticket.html.erb (Duration: 0.1ms | Allocations: 33)
+  Rendered tickets/_ticket.html.erb (Duration: 0.1ms | Allocations: 25)
+  Rendered tickets/index.html.erb within layouts/application (Duration: 2.6ms | Allocations: 1201)
+  Rendered layout layouts/application.html.erb (Duration: 5.4ms | Allocations: 3353)
+Completed 200 OK in 7ms (Views: 5.9ms | ActiveRecord: 0.1ms | Allocations: 3764)
+
+
+Started GET "/tickets" for 127.0.0.1 at 2022-03-31 08:27:43 -0300
+Processing by TicketsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tickets/index.html.erb within layouts/application
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/views/tickets/index.html.erb:6
+  [1m[36mTicket Load (1.2ms)[0m  [1m[34mSELECT "tickets".* FROM "tickets"[0m
+  ↳ app/views/tickets/index.html.erb:6
+  Rendered tickets/_ticket.html.erb (Duration: 7.1ms | Allocations: 26)
+  Rendered tickets/_ticket.html.erb (Duration: 0.1ms | Allocations: 25)
+  Rendered tickets/index.html.erb within layouts/application (Duration: 264.5ms | Allocations: 1733)
+  Rendered layout layouts/application.html.erb (Duration: 362.5ms | Allocations: 3773)
+Completed 200 OK in 472ms (Views: 391.2ms | ActiveRecord: 25.6ms | Allocations: 4097)
+
+
+Started GET "/tickets/" for 127.0.0.1 at 2022-03-31 08:41:09 -0300
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by TicketsController#index as */*
+  Parameters: {"ticket"=>{}}
+  Rendering layout layouts/application.html.erb
+  Rendering tickets/index.html.erb within layouts/application
+  [1m[36mTicket Load (0.4ms)[0m  [1m[34mSELECT "tickets".* FROM "tickets"[0m
+  ↳ app/views/tickets/index.html.erb:6
+  Rendered tickets/_ticket.html.erb (Duration: 1.9ms | Allocations: 275)
+  Rendered tickets/_ticket.html.erb (Duration: 0.2ms | Allocations: 25)
+  Rendered tickets/index.html.erb within layouts/application (Duration: 35.5ms | Allocations: 5680)
+  Rendered layout layouts/application.html.erb (Duration: 237.0ms | Allocations: 40110)
+Completed 200 OK in 260ms (Views: 243.9ms | ActiveRecord: 1.4ms | Allocations: 43596)
+
+
+Started GET "/tickets.json" for 127.0.0.1 at 2022-03-31 08:41:24 -0300
+Processing by TicketsController#index as JSON
+  Parameters: {"ticket"=>{}}
+  Rendering tickets/index.json.jbuilder
+  [1m[36mTicket Load (0.1ms)[0m  [1m[34mSELECT "tickets".* FROM "tickets"[0m
+  ↳ app/views/tickets/index.json.jbuilder:1
+  Rendered collection of tickets/_ticket.json.jbuilder [2 times] (Duration: 2.1ms | Allocations: 525)
+  Rendered tickets/index.json.jbuilder (Duration: 7.3ms | Allocations: 1789)
+Completed 200 OK in 10ms (Views: 9.0ms | ActiveRecord: 0.1ms | Allocations: 2315)
+
+
