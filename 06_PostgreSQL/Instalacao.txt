@@ -35,4 +35,14 @@ sudo service postgresql restart
 # Para ver as bases disponiveis no postgresql:
 psql -U postgres -l
 
+# Para criar um usuário
+sudo -u postgres createuser -s eduardo
 
+# Para escrever SQL no terminal
+sudo -su postgres
+psql postgres
+
+# Apagar usuário (dentro do terminal do PostgreSQL)
+\du
+drop user "user_name";
+\du
